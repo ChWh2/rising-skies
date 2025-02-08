@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbpjbnsahs0mx"]
+
+[ext_resource type="PackedScene" uid="uid://cjuhta152oka5" path="res://Scenes/interact_point.tscn" id="1_ipbxy"]
+[ext_resource type="Texture2D" uid="uid://canl3b1gmcc7p" path="res://Assets/key.png" id="1_mwgnb"]
+[ext_resource type="Script" path="res://Scripts/key.gd" id="2_tpf3d"]
+
+[node name="Key" type="Sprite2D"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_mwgnb")
+script = ExtResource("2_tpf3d")
+
+[node name="InteractPoint" parent="." instance=ExtResource("1_ipbxy")]
+scale = Vector2(0.2, 0.2)
+interactText = "E to Pickup"
+takesKey = false
+
+[connection signal="Interacted" from="InteractPoint" to="." method="takeKey"]

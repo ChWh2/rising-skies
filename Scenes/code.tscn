@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds1rj6118k15v"]
+
+[ext_resource type="Script" path="res://Scripts/Code.gd" id="1_e4y0m"]
+[ext_resource type="PackedScene" uid="uid://cjuhta152oka5" path="res://Scenes/interact_point.tscn" id="2_36jg5"]
+[ext_resource type="FontFile" uid="uid://k5fj8nrf5oo1" path="res://Assets/Tiny5-Regular.ttf" id="3_4dt38"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ucil"]
+font = ExtResource("3_4dt38")
+font_size = 128
+
+[node name="Code" type="Node2D"]
+script = ExtResource("1_e4y0m")
+metadata/_edit_vertical_guides_ = [-164.0]
+
+[node name="InteractPoint" parent="." instance=ExtResource("2_36jg5")]
+interactText = "E to input"
+takesKey = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Digit1" type="Button" parent="UI"]
+offset_left = 82.0
+offset_top = 40.0
+offset_right = 277.0
+offset_bottom = 235.0
+
+[node name="Text" type="Label" parent="UI/Digit1"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 195.0
+text = "1"
+label_settings = SubResource("LabelSettings_3ucil")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2" type="Button" parent="UI"]
+offset_left = 277.0
+offset_top = 40.0
+offset_right = 472.0
+offset_bottom = 235.0
+
+[node name="Text" type="Label" parent="UI/Digit2"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 195.0
+text = "1"
+label_settings = SubResource("LabelSettings_3ucil")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3" type="Button" parent="UI"]
+offset_left = 472.0
+offset_top = 40.0
+offset_right = 667.0
+offset_bottom = 235.0
+
+[node name="Text" type="Label" parent="UI/Digit3"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 195.0
+text = "1"
+label_settings = SubResource("LabelSettings_3ucil")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit4" type="Button" parent="UI"]
+offset_left = 667.0
+offset_top = 40.0
+offset_right = 862.0
+offset_bottom = 235.0
+
+[node name="Text" type="Label" parent="UI/Digit4"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 195.0
+text = "1"
+label_settings = SubResource("LabelSettings_3ucil")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit5" type="Button" parent="UI"]
+offset_left = 862.0
+offset_top = 40.0
+offset_right = 1057.0
+offset_bottom = 235.0
+
+[node name="Text" type="Label" parent="UI/Digit5"]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 195.0
+text = "1"
+label_settings = SubResource("LabelSettings_3ucil")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="Interacted" from="InteractPoint" to="." method="_on_interact_point_interacted"]
+[connection signal="pressed" from="UI/Digit1" to="." method="_on_digit_1_pressed"]
+[connection signal="pressed" from="UI/Digit2" to="." method="_on_digit_2_pressed"]
+[connection signal="pressed" from="UI/Digit3" to="." method="_on_digit_3_pressed"]
+[connection signal="pressed" from="UI/Digit4" to="." method="_on_digit_4_pressed"]
+[connection signal="pressed" from="UI/Digit5" to="." method="_on_digit_5_pressed"]
